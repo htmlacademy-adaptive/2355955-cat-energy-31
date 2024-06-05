@@ -1,0 +1,224 @@
+.programs-card {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 21px 20px 18px;
+  font-weight: 400;
+  background-color: $basic-grey;
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $basic-green;
+
+    @include vp-767 {
+      position: static;
+      grid-column: 2/3;
+      grid-row: 1 / 4;
+      width: 200px;
+      height: 200px;
+      place-self: center center;
+    }
+
+
+    @include vp-1300 {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100px;
+      height: 100px;
+      place-self: self-start start;
+    }
+  }
+
+
+  &:first-child::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: $primary-black;
+    display: block;
+    width: 36px;
+    height: 50px;
+    left: 27px;
+    top: 18px;
+    mask-image: url("../../icons/stack.svg#cat");
+    mask-repeat: no-repeat;
+
+    @include vp-767 {
+      position: relative;
+      grid-column: 2/3;
+      grid-row: 1 / 4;
+      top: auto;
+      left: auto;
+      width: 140px;
+      height: 194px;
+      place-self: center center;
+    }
+
+    @include vp-1300 {
+      position: relative;
+      transform: translate(25%, -6px);
+      grid-column: 1;
+      grid-row: 1;
+      width: 70px;
+      height: 97px;
+      place-self: center start;
+    }
+  }
+
+  &:last-child::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: $primary-black;
+    display: block;
+    width: 67px;
+    height: 28px;
+    left: 13px;
+    top: 32px;
+    mask-image: url("../../icons/stack.svg#tiger");
+    mask-repeat: no-repeat;
+
+    @include vp-767 {
+      position: relative;
+      grid-column: 2/3;
+      grid-row: 1 / 4;
+      top: auto;
+      left: auto;
+      width: 280px;
+      height: 112px;
+      place-self: center center;
+    }
+
+    @include vp-1300 {
+      grid-column: 1;
+      grid-row: 1;
+      width: 135px;
+      height: 56px;
+      transform: translateX(-15%);
+      place-self: center start;
+    }
+  }
+
+  @include vp-767 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 20px;
+    padding: 77px 30px 53px 53px;
+    width: 100%;
+  }
+
+  @include vp-1300 {
+    grid-template-columns: 100px 1fr;
+    padding: 41px 61px 55px 52px;
+    column-gap: 45px;
+  }
+}
+
+.programs-card__title {
+  font-size: 24px;
+  line-height: 1.54em;
+  margin-left: 70px;
+  margin-bottom: 29px;
+
+  @include vp-767 {
+    font-size: 36px;
+    line-height: 1;
+    grid-column: 1/2;
+    justify-self: flex-start;
+    margin: 0;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  @include vp-1300 {
+    grid-column: 2;
+    grid-row: 1;
+    place-self: center start;
+    margin: 0;
+  }
+}
+
+.programs-card__description {
+  position: relative;
+  font-family: $secondary-font, $fallback-font;
+  font-size: 14px;
+  line-height: 1.28em;
+  color: $special-dark;
+  padding-bottom: 23px;
+
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $special-grey;
+  }
+
+
+  @include vp-767 {
+    grid-column: 1/2;
+    justify-self: flex-start;
+    font-size: 16px;
+    line-height: 1.5em;
+    width: 340px;
+    padding-bottom: 0;
+    margin-bottom: 48px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include vp-1300 {
+    grid-column: -1/ 1;
+    grid-row: 2;
+    margin-bottom: 23px;
+    margin-top: 39px;
+    width: auto;
+  }
+}
+
+.programs-card__link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: $primary-black;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 15px;
+
+  & svg {
+    position: relative;
+    right: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(5px);
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include vp-767 {
+    grid-column: 1/2;
+    font-size: 20px;
+    gap: 25px;
+  }
+
+  @include vp-1300 {
+    grid-column: -1/ 1;
+  }
+}

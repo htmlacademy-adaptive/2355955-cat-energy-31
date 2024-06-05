@@ -1,0 +1,29 @@
+.social {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 400;
+  border-bottom: 1px solid $basic-grey-brown;
+
+  @include vp-767 {
+    border: none;
+  }
+}
+
+.social__list {
+  list-style-type: none;
+  gap: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.social__link {
+  color: $special-grey-brown;
+
+  &:hover {
+    color: $basic-green;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
