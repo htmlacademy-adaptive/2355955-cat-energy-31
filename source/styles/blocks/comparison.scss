@@ -5,6 +5,10 @@
   width: min(100%, 560px);
   display: grid;
   grid-template-columns: calc(var(--curtain-place) * 100%)  calc((1 - var(--curtain-place)) * 100%);
+
+  @include vp-1300 {
+    left: 21px;
+  }
 }
 
 .comparison__after-image {
@@ -67,5 +71,10 @@
   &:hover {
     background-color: $basic-green;
     color: $basic-green;
+  }
+
+  &:active {
+    background-color: $divider-active-button;
+    color: $divider-active-button;
   }
 }
